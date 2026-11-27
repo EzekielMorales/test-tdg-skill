@@ -30,5 +30,9 @@ describe("fizzBuzz", () => {
     expect(() => fizzBuzz(-1)).toThrow(RangeError);
   });
 
-  it.skip("throws RangeError for non-integers", () => {});
+  it("throws RangeError for non-integers", () => {
+    expect(() => fizzBuzz(2.5)).toThrow(RangeError);
+    expect(() => fizzBuzz(NaN)).toThrow(RangeError);
+    expect(() => fizzBuzz(Infinity)).toThrow(RangeError);
+  });
 });
