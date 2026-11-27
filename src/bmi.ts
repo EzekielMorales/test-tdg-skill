@@ -15,12 +15,14 @@ export type BmiCategory = "Underweight" | "Normal" | "Overweight" | "Obese";
 
 /** WHO cut-off: values below this are Underweight. */
 const NORMAL_MIN = 18.5;
+/** WHO cut-off: values from this up are Overweight. */
+const OVERWEIGHT_MIN = 25;
 
 /**
  * Maps a BMI value to its WHO category.
  */
 export function bmiCategory(value: number): BmiCategory {
   if (value < NORMAL_MIN) return "Underweight";
-  if (value < 25) return "Normal";
+  if (value < OVERWEIGHT_MIN) return "Normal";
   return "Overweight";
 }
