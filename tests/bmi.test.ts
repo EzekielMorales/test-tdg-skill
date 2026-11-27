@@ -11,7 +11,10 @@ describe("bmi", () => {
     expect(() => bmi(-70, 1.75)).toThrow(RangeError);
   });
 
-  it.skip("throws RangeError when height is 0 or negative", () => {});
+  it("throws RangeError when height is 0 or negative", () => {
+    expect(() => bmi(70, 0)).toThrow(RangeError);
+    expect(() => bmi(70, -1.75)).toThrow(RangeError);
+  });
 
   it.skip("throws TypeError when an argument is NaN or Infinity", () => {});
 });
