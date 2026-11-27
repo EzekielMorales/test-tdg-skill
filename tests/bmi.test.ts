@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { bmi } from "../src/bmi";
+import { bmi, bmiCategory } from "../src/bmi";
 
 describe("bmi", () => {
   it("returns weight / height² rounded to 1 decimal", () => {
@@ -14,7 +14,9 @@ describe("bmi", () => {
 });
 
 describe("bmiCategory", () => {
-  it.skip("returns Underweight below 18.5", () => {});
+  it("returns Underweight below 18.5", () => {
+    expect(bmiCategory(18.4)).toBe("Underweight");
+  });
 
   it.skip("returns Normal from 18.5 to below 25", () => {});
 
