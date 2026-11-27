@@ -25,7 +25,10 @@ describe("fizzBuzz", () => {
     expect(() => fizzBuzz(0)).toThrow(RangeError);
   });
 
-  it.skip("throws RangeError for negative numbers", () => {});
+  it("throws RangeError for negative numbers", () => {
+    expect(() => fizzBuzz(-3)).toThrow(RangeError);
+    expect(() => fizzBuzz(-1)).toThrow(RangeError);
+  });
 
   it.skip("throws RangeError for non-integers", () => {});
 });
