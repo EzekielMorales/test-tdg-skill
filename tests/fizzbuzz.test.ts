@@ -1,0 +1,20 @@
+import { describe, it, expect } from "vitest";
+import { fizzBuzz } from "../src/fizzbuzz";
+
+describe("fizzBuzz", () => {
+  it("returns the number as a string when not divisible by 3 or 5", () => {
+    expect(fizzBuzz(1)).toBe("1");
+  });
+
+  it.skip("returns Fizz for multiples of 3", () => {});
+
+  it.skip("returns Buzz for multiples of 5", () => {});
+
+  it.skip("returns FizzBuzz for multiples of 15", () => {});
+
+  it.skip("throws RangeError for 0", () => {});
+
+  it.skip("throws RangeError for negative numbers", () => {});
+
+  it.skip("throws RangeError for non-integers", () => {});
+});
