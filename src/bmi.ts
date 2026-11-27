@@ -10,6 +10,7 @@ function roundToOneDecimal(value: number): number {
  */
 export function bmi(weightKg: number, heightM: number): number {
   assertPositive(weightKg, "weightKg");
+  assertPositive(heightM, "heightM");
   return roundToOneDecimal(weightKg / (heightM * heightM));
 }
 
