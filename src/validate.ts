@@ -15,3 +15,11 @@ export function assertPositive(value: number, name: string): void {
     throw new RangeError(`${name} must be positive, got ${value}`);
   }
 }
+
+/**
+ * Throws TypeError for NaN/±Infinity, then RangeError for 0 or negative.
+ */
+export function assertPositiveFinite(value: number, name: string): void {
+  assertFiniteNumber(value, name);
+  assertPositive(value, name);
+}

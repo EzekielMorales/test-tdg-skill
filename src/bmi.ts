@@ -1,4 +1,4 @@
-import { assertFiniteNumber, assertPositive } from "./validate";
+import { assertPositiveFinite } from "./validate";
 
 function roundToOneDecimal(value: number): number {
   return Math.round(value * 10) / 10;
@@ -7,13 +7,12 @@ function roundToOneDecimal(value: number): number {
 /**
  * Body Mass Index: weight (kg) divided by height (m) squared,
  * rounded to 1 decimal place.
+ * @throws {TypeError} if weightKg or heightM is NaN or ±Infinity
  * @throws {RangeError} if weightKg or heightM is 0 or negative
  */
 export function bmi(weightKg: number, heightM: number): number {
-  assertFiniteNumber(weightKg, "weightKg");
-  assertFiniteNumber(heightM, "heightM");
-  assertPositive(weightKg, "weightKg");
-  assertPositive(heightM, "heightM");
+  assertPositiveFinite(weightKg, "weightKg");
+  assertPositiveFinite(heightM, "heightM");
   return roundToOneDecimal(weightKg / (heightM * heightM));
 }
 
