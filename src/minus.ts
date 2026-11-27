@@ -2,6 +2,9 @@ function assertNotNaN(value: number, name: string): void {
   if (Number.isNaN(value)) {
     throw new TypeError(`${name} must be a number, got NaN`);
   }
+  if (value === Infinity || value === -Infinity) {
+    throw new TypeError(`${name} must be finite, got ${value}`);
+  }
 }
 
 /**
