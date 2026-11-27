@@ -21,5 +21,6 @@ const NORMAL_MIN = 18.5;
  */
 export function bmiCategory(value: number): BmiCategory {
   if (value < NORMAL_MIN) return "Underweight";
-  return "Normal";
+  if (value < 25) return "Normal";
+  return "Overweight";
 }
