@@ -7,6 +7,7 @@ function roundToOneDecimal(value: number): number {
 /**
  * Body Mass Index: weight (kg) divided by height (m) squared,
  * rounded to 1 decimal place.
+ * @throws {RangeError} if weightKg or heightM is 0 or negative
  */
 export function bmi(weightKg: number, heightM: number): number {
   assertPositive(weightKg, "weightKg");
