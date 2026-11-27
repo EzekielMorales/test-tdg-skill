@@ -10,7 +10,10 @@ describe("minus", () => {
     expect(minus(3, 5)).toBe(-2);
   });
 
-  it.skip("throws TypeError when an argument is NaN", () => {});
+  it("throws TypeError when an argument is NaN", () => {
+    expect(() => minus(NaN, 1)).toThrow(TypeError);
+    expect(() => minus(1, NaN)).toThrow(TypeError);
+  });
 
   it.skip("throws TypeError when an argument is Infinity", () => {});
 });
