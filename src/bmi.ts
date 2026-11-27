@@ -10,6 +10,12 @@ export function bmi(weightKg: number, heightM: number): number {
   return roundToOneDecimal(weightKg / (heightM * heightM));
 }
 
-export function bmiCategory(value: number): string {
+/** WHO adult BMI categories. */
+export type BmiCategory = "Underweight" | "Normal" | "Overweight" | "Obese";
+
+/**
+ * Maps a BMI value to its WHO category.
+ */
+export function bmiCategory(value: number): BmiCategory {
   return "Underweight";
 }
