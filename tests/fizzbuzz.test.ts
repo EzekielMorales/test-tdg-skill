@@ -21,7 +21,9 @@ describe("fizzBuzz", () => {
     expect(fizzBuzz(30)).toBe("FizzBuzz");
   });
 
-  it.skip("throws RangeError for 0", () => {});
+  it("throws RangeError for 0", () => {
+    expect(() => fizzBuzz(0)).toThrow(RangeError);
+  });
 
   it.skip("throws RangeError for negative numbers", () => {});
 
