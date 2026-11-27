@@ -9,3 +9,7 @@ function roundToOneDecimal(value: number): number {
 export function bmi(weightKg: number, heightM: number): number {
   return roundToOneDecimal(weightKg / (heightM * heightM));
 }
+
+export function bmiCategory(value: number): string {
+  return "Underweight";
+}
