@@ -18,7 +18,10 @@ describe("bmiCategory", () => {
     expect(bmiCategory(18.4)).toBe("Underweight");
   });
 
-  it.skip("returns Normal from 18.5 to below 25", () => {});
+  it("returns Normal from 18.5 to below 25", () => {
+    expect(bmiCategory(18.5)).toBe("Normal");
+    expect(bmiCategory(24.9)).toBe("Normal");
+  });
 
   it.skip("returns Overweight from 25 to below 30", () => {});
 
