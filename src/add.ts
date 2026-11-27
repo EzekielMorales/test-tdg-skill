@@ -1,8 +1,4 @@
-function assertFiniteNumber(value: number, name: string): void {
-  if (!Number.isFinite(value)) {
-    throw new TypeError(`${name} must be a finite number, got ${value}`);
-  }
-}
+import { assertFiniteNumber } from "./validate";
 
 /**
  * Returns the sum of a and b.

@@ -1,18 +1,11 @@
-function assertNotNaN(value: number, name: string): void {
-  if (Number.isNaN(value)) {
-    throw new TypeError(`${name} must be a number, got NaN`);
-  }
-  if (value === Infinity || value === -Infinity) {
-    throw new TypeError(`${name} must be finite, got ${value}`);
-  }
-}
+import { assertFiniteNumber } from "./validate";
 
 /**
  * Returns the difference a - b.
- * @throws {TypeError} if either argument is NaN
+ * @throws {TypeError} if either argument is NaN or ±Infinity
  */
 export function minus(a: number, b: number): number {
-  assertNotNaN(a, "a");
-  assertNotNaN(b, "b");
+  assertFiniteNumber(a, "a");
+  assertFiniteNumber(b, "b");
   return a - b;
 }
