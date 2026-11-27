@@ -6,7 +6,10 @@ describe("fizzBuzz", () => {
     expect(fizzBuzz(1)).toBe("1");
   });
 
-  it.skip("returns Fizz for multiples of 3", () => {});
+  it("returns Fizz for multiples of 3", () => {
+    expect(fizzBuzz(3)).toBe("Fizz");
+    expect(fizzBuzz(9)).toBe("Fizz");
+  });
 
   it.skip("returns Buzz for multiples of 5", () => {});
 
