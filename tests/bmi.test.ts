@@ -16,7 +16,12 @@ describe("bmi", () => {
     expect(() => bmi(70, -1.75)).toThrow(RangeError);
   });
 
-  it.skip("throws TypeError when an argument is NaN or Infinity", () => {});
+  it("throws TypeError when an argument is NaN or Infinity", () => {
+    expect(() => bmi(NaN, 1.75)).toThrow(TypeError);
+    expect(() => bmi(70, NaN)).toThrow(TypeError);
+    expect(() => bmi(Infinity, 1.75)).toThrow(TypeError);
+    expect(() => bmi(70, Infinity)).toThrow(TypeError);
+  });
 });
 
 describe("bmiCategory", () => {
