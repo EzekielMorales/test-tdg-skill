@@ -1,4 +1,4 @@
-import { assertPositive } from "./validate";
+import { assertFiniteNumber, assertPositive } from "./validate";
 
 function roundToOneDecimal(value: number): number {
   return Math.round(value * 10) / 10;
@@ -10,6 +10,8 @@ function roundToOneDecimal(value: number): number {
  * @throws {RangeError} if weightKg or heightM is 0 or negative
  */
 export function bmi(weightKg: number, heightM: number): number {
+  assertFiniteNumber(weightKg, "weightKg");
+  assertFiniteNumber(heightM, "heightM");
   assertPositive(weightKg, "weightKg");
   assertPositive(heightM, "heightM");
   return roundToOneDecimal(weightKg / (heightM * heightM));
