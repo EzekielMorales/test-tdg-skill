@@ -1,3 +1,5 @@
+import { assertPositive } from "./validate";
+
 function roundToOneDecimal(value: number): number {
   return Math.round(value * 10) / 10;
 }
@@ -7,7 +9,7 @@ function roundToOneDecimal(value: number): number {
  * rounded to 1 decimal place.
  */
 export function bmi(weightKg: number, heightM: number): number {
-  if (weightKg <= 0) throw new RangeError("weight must be positive");
+  assertPositive(weightKg, "weightKg");
   return roundToOneDecimal(weightKg / (heightM * heightM));
 }
 
