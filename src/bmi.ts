@@ -13,17 +13,22 @@ export function bmi(weightKg: number, heightM: number): number {
 /** WHO adult BMI categories. */
 export type BmiCategory = "Underweight" | "Normal" | "Overweight" | "Obese";
 
-/** WHO cut-off: values below this are Underweight. */
-const NORMAL_MIN = 18.5;
-/** WHO cut-off: values from this up are Overweight. */
-const OVERWEIGHT_MIN = 25;
+/** A category that applies to BMI values below `below`. */
+interface CategoryBand {
+  readonly below: number;
+  readonly category: BmiCategory;
+}
+
+/** WHO bands in ascending order; anything at or above the last is Obese. */
+const WHO_BANDS: readonly CategoryBand[] = [
+  { below: 18.5, category: "Underweight" },
+  { below: 25, category: "Normal" },
+  { below: 30, category: "Overweight" },
+];
 
 /**
  * Maps a BMI value to its WHO category.
  */
 export function bmiCategory(value: number): BmiCategory {
-  if (value < NORMAL_MIN) return "Underweight";
-  if (value < OVERWEIGHT_MIN) return "Normal";
-  if (value < 30) return "Overweight";
-  return "Obese";
+  return WHO_BANDS.find((band) => value < band.below)?.category ?? "Obese";
 }
