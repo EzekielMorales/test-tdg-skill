@@ -6,7 +6,10 @@ describe("bmi", () => {
     expect(bmi(70, 1.75)).toBe(22.9);
   });
 
-  it.skip("throws RangeError when weight is 0 or negative", () => {});
+  it("throws RangeError when weight is 0 or negative", () => {
+    expect(() => bmi(0, 1.75)).toThrow(RangeError);
+    expect(() => bmi(-70, 1.75)).toThrow(RangeError);
+  });
 
   it.skip("throws RangeError when height is 0 or negative", () => {});
 
