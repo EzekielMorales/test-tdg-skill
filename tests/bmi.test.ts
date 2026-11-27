@@ -28,5 +28,8 @@ describe("bmiCategory", () => {
     expect(bmiCategory(29.9)).toBe("Overweight");
   });
 
-  it.skip("returns Obese at 30 and above", () => {});
+  it("returns Obese at 30 and above", () => {
+    expect(bmiCategory(30)).toBe("Obese");
+    expect(bmiCategory(45)).toBe("Obese");
+  });
 });
