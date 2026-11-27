@@ -15,5 +15,8 @@ describe("minus", () => {
     expect(() => minus(1, NaN)).toThrow(TypeError);
   });
 
-  it.skip("throws TypeError when an argument is Infinity", () => {});
+  it("throws TypeError when an argument is Infinity", () => {
+    expect(() => minus(Infinity, 1)).toThrow(TypeError);
+    expect(() => minus(1, -Infinity)).toThrow(TypeError);
+  });
 });
