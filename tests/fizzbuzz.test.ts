@@ -16,7 +16,10 @@ describe("fizzBuzz", () => {
     expect(fizzBuzz(10)).toBe("Buzz");
   });
 
-  it.skip("returns FizzBuzz for multiples of 15", () => {});
+  it("returns FizzBuzz for multiples of 15", () => {
+    expect(fizzBuzz(15)).toBe("FizzBuzz");
+    expect(fizzBuzz(30)).toBe("FizzBuzz");
+  });
 
   it.skip("throws RangeError for 0", () => {});
 
