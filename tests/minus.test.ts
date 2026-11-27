@@ -6,7 +6,9 @@ describe("minus", () => {
     expect(minus(5, 3)).toBe(2);
   });
 
-  it.skip("returns a negative result when b is greater than a", () => {});
+  it("returns a negative result when b is greater than a", () => {
+    expect(minus(3, 5)).toBe(-2);
+  });
 
   it.skip("throws TypeError when an argument is NaN", () => {});
 
