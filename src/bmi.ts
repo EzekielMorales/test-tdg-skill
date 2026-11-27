@@ -7,6 +7,7 @@ function roundToOneDecimal(value: number): number {
  * rounded to 1 decimal place.
  */
 export function bmi(weightKg: number, heightM: number): number {
+  if (weightKg <= 0) throw new RangeError("weight must be positive");
   return roundToOneDecimal(weightKg / (heightM * heightM));
 }
 
