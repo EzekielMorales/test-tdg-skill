@@ -17,5 +17,6 @@ export type BmiCategory = "Underweight" | "Normal" | "Overweight" | "Obese";
  * Maps a BMI value to its WHO category.
  */
 export function bmiCategory(value: number): BmiCategory {
-  return "Underweight";
+  if (value < 18.5) return "Underweight";
+  return "Normal";
 }
